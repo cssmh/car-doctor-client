@@ -11,7 +11,11 @@ const Customer = () => {
       </p>
       <div className="flex justify-center mt-9 gap-6">
         <div className="p-10 border border-gray-300 rounded-lg">
-          <div className="flex justify-between items-center">
+          <div
+            data-aos="fade-up"
+            data-aos-anchor-placement="center-center"
+            className="flex justify-between items-center"
+          >
             <div className="flex items-center gap-4 mb-2">
               <img src={customer} className="w-12 rounded-3xl" alt="" />
               <p>
@@ -55,7 +59,11 @@ const Customer = () => {
           </div>
         </div>
         <div className="p-10 border border-gray-300 rounded-lg">
-          <div className="flex justify-between items-center">
+          <div
+            data-aos="fade-up"
+            data-aos-anchor-placement="center-center"
+            className="flex justify-between items-center"
+          >
             <div className="flex items-center gap-4 mb-2">
               <img src={customer} className="w-12 rounded-3xl" alt="" />
               <p>

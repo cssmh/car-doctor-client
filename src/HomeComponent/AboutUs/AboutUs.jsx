@@ -2,7 +2,7 @@ import person from "../../assets/images/about_us/person.jpg";
 import parts from "../../assets/images/about_us/parts.jpg";
 const AboutUs = () => {
   return (
-    <div className="my-10 flex flex-col lg:flex-row justify-center">
+    <div data-aos="zoom-in" className="my-10 flex flex-col lg:flex-row justify-center">
       <div className="w-1/2 relative">
         <img src={person} className="w-4/5 rounded-lg" alt="" />
         <img

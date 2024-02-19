@@ -12,17 +12,17 @@ const Team = () => {
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-7">
         <div className="space-y-1 p-4 border-2 rounded-lg text-center mx-2 lg:mx-0">
-          <img src={team1} className="rounded-lg" alt="" />
+          <img src={team1} data-aos="flip-up" className="rounded-lg" alt="" />
           <h1 className="font-semibold text-xl">Car Engine Plug</h1>
           <p className="font-semibold text-gray-400">Engine Expert</p>
         </div>
         <div className="space-y-1 p-4 border-2 rounded-lg text-center mx-2 lg:mx-0">
-          <img src={team2} className="rounded-lg" alt="" />
+          <img src={team2} data-aos="flip-up" className="rounded-lg" alt="" />
           <h1 className="font-semibold text-xl">Car Engine Plug</h1>
           <p className="font-semibold text-gray-400">Engine Expert</p>
         </div>
         <div className="space-y-1 p-4 border-2 rounded-lg text-center mx-2 lg:mx-0">
-          <img src={team3} className="rounded-lg" alt="" />
+          <img src={team3} data-aos="flip-up" className="rounded-lg" alt="" />
           <h1 className="font-semibold text-xl">Car Engine Plug</h1>
           <p className="font-semibold text-gray-400">Engine Expert</p>
         </div>

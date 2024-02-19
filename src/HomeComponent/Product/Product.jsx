@@ -15,7 +15,12 @@ const Product = () => {
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-7">
         <div className="space-y-1 p-4 border-2 rounded-lg text-center mx-2 lg:mx-0">
-          <img src={product1} className="rounded-lg lg:w-44 lg:h-40 mx-auto" alt="" />
+          <img
+            data-aos="zoom-in"
+            src={product1}
+            className="rounded-lg lg:w-44 lg:h-40 mx-auto"
+            alt=""
+          />
           <div className="rating">
             <input
               type="radio"
@@ -47,7 +52,12 @@ const Product = () => {
           <p className="font-semibold text-red-500">$20.00</p>
         </div>
         <div className="space-y-1 p-4 border-2 rounded-lg text-center mx-2 lg:mx-0">
-          <img src={product2} className="rounded-lg lg:w-44 lg:h-40 mx-auto" alt="" />
+          <img
+            data-aos="zoom-in"
+            src={product2}
+            className="rounded-lg lg:w-44 lg:h-40 mx-auto"
+            alt=""
+          />
           <div className="rating">
             <input
               type="radio"
@@ -79,7 +89,12 @@ const Product = () => {
           <p className="font-semibold text-red-500">$20.00</p>
         </div>
         <div className="space-y-1 p-4 border-2 rounded-lg text-center mx-2 lg:mx-0">
-          <img src={product3} className="rounded-lg lg:w-44 lg:h-40 mx-auto" alt="" />
+          <img
+            data-aos="zoom-in"
+            src={product3}
+            className="rounded-lg lg:w-44 lg:h-40 mx-auto"
+            alt=""
+          />
           <div className="rating">
             <input
               type="radio"
@@ -111,7 +126,12 @@ const Product = () => {
           <p className="font-semibold text-red-500">$20.00</p>
         </div>
         <div className="space-y-1 p-4 border-2 rounded-lg text-center mx-2 lg:mx-0">
-          <img src={product4} className="rounded-lg lg:w-44 lg:h-40 mx-auto" alt="" />
+          <img
+            data-aos="zoom-in"
+            src={product4}
+            className="rounded-lg lg:w-44 lg:h-40 mx-auto"
+            alt=""
+          />
           <div className="rating">
             <input
               type="radio"
@@ -143,7 +163,12 @@ const Product = () => {
           <p className="font-semibold text-red-500">$20.00</p>
         </div>
         <div className="space-y-1 p-4 border-2 rounded-lg text-center mx-2 lg:mx-0">
-          <img src={product5} className="rounded-lg lg:w-44 lg:h-40 mx-auto" alt="" />
+          <img
+            data-aos="zoom-in"
+            src={product5}
+            className="rounded-lg lg:w-44 lg:h-40 mx-auto"
+            alt=""
+          />
           <div className="rating">
             <input
               type="radio"
@@ -175,7 +200,12 @@ const Product = () => {
           <p className="font-semibold text-red-500">$20.00</p>
         </div>
         <div className="space-y-1 p-4 border-2 rounded-lg text-center mx-2 lg:mx-0">
-          <img src={product6} className="rounded-lg lg:w-44 lg:h-40 mx-auto" alt="" />
+          <img
+            data-aos="zoom-in"
+            src={product6}
+            className="rounded-lg lg:w-44 lg:h-40 mx-auto"
+            alt=""
+          />
           <div className="rating">
             <input
               type="radio"
