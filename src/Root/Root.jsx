@@ -5,28 +5,42 @@ import Home from "../Component/Home/Home";
 import Login from "../Component/Login/Login";
 import Register from "../Component/Register/Register";
 import About from "../Component/About/About";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import MyBookings from "../Component/MyBookings/MyBookings";
 
 const Root = createBrowserRouter([
   {
     path: "/",
-    element: <MainLayout></MainLayout>,
-    errorElement: <ErrorPage></ErrorPage>,
+    element: <MainLayout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
-        element: <Home></Home>,
+        element: <Home />,
       },
       {
         path: "/login",
-        element: <Login></Login>
+        element: <Login />,
       },
       {
         path: "/register",
-        element: <Register></Register>
+        element: <Register />,
       },
       {
         path: "/about",
-        element: <About></About>
+        element: (
+          <PrivateRoute>
+            <About />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/my-bookings",
+        element: (
+          <PrivateRoute>
+            <MyBookings />
+          </PrivateRoute>
+        ),
       },
     ],
   },
