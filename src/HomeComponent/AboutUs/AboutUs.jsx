@@ -5,7 +5,11 @@ const AboutUs = () => {
     <div className="my-10 flex flex-col lg:flex-row justify-center">
       <div className="w-1/2 relative">
         <img src={person} className="w-4/5 rounded-lg" alt="" />
-        <img src={parts} className="w-2/5 absolute right-16 top-48 border-8 border-white rounded-lg" alt="" />
+        <img
+          src={parts}
+          className="w-2/5 absolute right-16 top-48 border-8 border-white rounded-lg"
+          alt=""
+        />
       </div>
       <div className="w-1/2 space-y-3">
         <p className="text-red-500 font-semibold">About Us</p>
