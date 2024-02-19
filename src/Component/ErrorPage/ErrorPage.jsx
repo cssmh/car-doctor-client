@@ -1,7 +1,7 @@
 const ErrorPage = () => {
     return (
         <div>
-            
+            kana error
         </div>
     );
 };

@@ -5,7 +5,9 @@ import { RouterProvider } from "react-router-dom";
 import Root from "./Root/Root";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+  <div className="max-w-[1220px] mx-auto">
+    <React.StrictMode>
     <RouterProvider router={Root} />
   </React.StrictMode>
+  </div>
 );
