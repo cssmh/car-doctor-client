@@ -1,5 +1,5 @@
-import { NavLink } from "react-router-dom";
-import logo from "../../assets/logo.svg"
+import { Link, NavLink } from "react-router-dom";
+import logo from "../../assets/logo.svg";
 const Navbar = () => {
   const navLink = (
     <>
@@ -11,6 +11,9 @@ const Navbar = () => {
       </li>
       <li>
         <NavLink to={"/my-bookings"}>My Bookings</NavLink>
+      </li>
+      <li>
+        <NavLink to={"/login"}>Login</NavLink>
       </li>
     </>
   );
@@ -42,13 +45,17 @@ const Navbar = () => {
             {navLink}
           </ul>
         </div>
-        <img src={logo} className="w-20" alt="" />
+        <Link to={"/"}>
+          <img src={logo} className="w-20" alt="" />
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navLink}</ul>
       </div>
       <div className="navbar-end">
-        <a className="text-red-500 border border-red-500 px-4 py-2 font-semibold">Appointment</a>
+        <a className="text-red-500 border border-red-500 px-4 py-2 font-semibold">
+          Appointment
+        </a>
       </div>
     </div>
   );
