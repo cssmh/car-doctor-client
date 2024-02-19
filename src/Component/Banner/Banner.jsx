@@ -7,12 +7,12 @@ import img6 from "../../assets/images/banner/6.jpg";
 
 const Banner = () => {
   return (
-    <div className="carousel w-full h-[600px] my-3">
+    <div className="carousel w-full lg:h-[600px] my-3">
       <div id="slide1" className="carousel-item relative w-full">
-        <img src={img1} className="w-full rounded-md" />
-        <div className="absolute rounded-md flex items-center h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
-          <div className="text-white space-y-7 pl-20 w-1/2">
-            <h2 className="text-5xl font-bold">
+        <img src={img1} className="h-1/2 lg:h-full w-full rounded-md" />
+        <div className="absolute rounded-md flex items-center h-1/2 lg:h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
+          <div className="text-white space-y-3 lg:space-y-7 pl-20 lg:w-1/2">
+            <h2 className="text-xl lg:text-5xl font-bold">
               Affordable Price For Car Servicing
             </h2>
             <p>
@@ -39,10 +39,10 @@ const Banner = () => {
         </div>
       </div>
       <div id="slide2" className="carousel-item relative w-full">
-        <img src={img2} className="w-full rounded-md" />
-        <div className="absolute rounded-md flex items-center h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
-          <div className="text-white space-y-7 pl-20 w-1/2">
-            <h2 className="text-5xl font-bold">
+        <img src={img2} className="h-1/2 lg:h-full w-full rounded-md" />
+        <div className="absolute rounded-md flex items-center h-1/2 lg:h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
+          <div className="text-white space-y-3 lg:space-y-7 pl-20 lg:w-1/2">
+            <h2 className="text-xl lg:text-5xl font-bold">
               Affordable Price For Car Servicing
             </h2>
             <p>
@@ -69,10 +69,10 @@ const Banner = () => {
         </div>
       </div>
       <div id="slide3" className="carousel-item relative w-full">
-        <img src={img3} className="w-full rounded-md" />
-        <div className="absolute rounded-md flex items-center h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
-          <div className="text-white space-y-7 pl-20 w-1/2">
-            <h2 className="text-5xl font-bold">
+        <img src={img3} className="h-1/2 lg:h-full w-full rounded-md" />
+        <div className="absolute rounded-md flex items-center h-1/2 lg:h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
+          <div className="text-white space-y-3 lg:space-y-7 pl-20 lg:w-1/2">
+            <h2 className="text-xl lg:text-5xl font-bold">
               Affordable Price For Car Servicing
             </h2>
             <p>
@@ -99,10 +99,10 @@ const Banner = () => {
         </div>
       </div>
       <div id="slide4" className="carousel-item relative w-full">
-        <img src={img4} className="w-full rounded-md" />
-        <div className="absolute rounded-md flex items-center h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
-          <div className="text-white space-y-7 pl-20 w-1/2">
-            <h2 className="text-5xl font-bold">
+        <img src={img4} className="h-1/2 lg:h-full w-full rounded-md" />
+        <div className="absolute rounded-md flex items-center h-1/2 lg:h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
+          <div className="text-white space-y-3 lg:space-y-7 pl-20 lg:w-1/2">
+            <h2 className="text-xl lg:text-5xl font-bold">
               Affordable Price For Car Servicing
             </h2>
             <p>
@@ -129,10 +129,10 @@ const Banner = () => {
         </div>
       </div>
       <div id="slide5" className="carousel-item relative w-full">
-        <img src={img5} className="w-full rounded-md" />
-        <div className="absolute rounded-md flex items-center h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
-          <div className="text-white space-y-7 pl-20 w-1/2">
-            <h2 className="text-5xl font-bold">
+        <img src={img5} className="h-1/2 lg:h-full w-full rounded-md" />
+        <div className="absolute rounded-md flex items-center h-1/2 lg:h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
+          <div className="text-white space-y-3 lg:space-y-7 pl-20 lg:w-1/2">
+            <h2 className="text-xl lg:text-5xl font-bold">
               Affordable Price For Car Servicing
             </h2>
             <p>
@@ -159,10 +159,10 @@ const Banner = () => {
         </div>
       </div>
       <div id="slide6" className="carousel-item relative w-full">
-        <img src={img6} className="w-full rounded-md" />
-        <div className="absolute rounded-md flex items-center h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
-          <div className="text-white space-y-7 pl-20 w-1/2">
-            <h2 className="text-5xl font-bold">
+        <img src={img6} className="h-1/2 lg:h-full w-full rounded-md" />
+        <div className="absolute rounded-md flex items-center h-1/2 lg:h-full left-0 top-0 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0)]">
+          <div className="text-white space-y-3 lg:space-y-7 pl-20 lg:w-1/2">
+            <h2 className="text-xl lg:text-5xl font-bold">
               Affordable Price For Car Servicing
             </h2>
             <p>

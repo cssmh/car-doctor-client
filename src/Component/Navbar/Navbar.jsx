@@ -63,7 +63,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-base-100 px-0">
+    <div className="navbar bg-base-100 px-2 lg:px-0">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -90,7 +90,7 @@ const Navbar = () => {
           </ul>
         </div>
         <Link to={"/"}>
-          <img src={logo} className="w-20" alt="" />
+          <img src={logo} className="w-12 lg:w-20" alt="" />
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
@@ -100,7 +100,7 @@ const Navbar = () => {
         <p><img src={user?.photoURL} className="w-10 mr-2 rounded-2xl" alt="" /></p>
         <Link
           to={"/"}
-          className="text-red-500 border border-red-500 px-4 py-2 font-semibold"
+          className="text-red-500 border border-red-500 px-2 lg:px-4 py-1 lg:py-2 font-semibold"
         >
           Appointment
         </Link>
