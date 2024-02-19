@@ -1,16 +1,29 @@
 import { Link } from "react-router-dom";
-import { FcGoogle } from "react-icons/fc";
 import login from "../../assets/images/login/login.svg";
-const Login = () => {
+const Register = () => {
   return (
-    <div className="hero my-1">
+    <div className="hero">
       <div className="hero-content flex-col lg:flex-row">
         <div className="text-center lg:text-left mr-0 lg:mr-5">
           <img src={login} className="w-2/3 lg:w-full mx-auto" alt="" />
         </div>
         <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <form className="card-body">
-            <h1 className="text-4xl font-semibold text-center">Login now!</h1>
+            <h1 className="text-4xl font-semibold text-center">
+              Register now!
+            </h1>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Your Name</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Name"
+                name="name"
+                className="input input-bordered"
+                required
+              />
+            </div>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Your Email</span>
@@ -34,28 +47,18 @@ const Login = () => {
                 className="input input-bordered"
                 required
               />
-              <label className="label">
-                <div className="label-text-alt link link-hover">
-                  Forgot password?
-                </div>
-              </label>
             </div>
-            <div className="form-control mt-1">
+            <div className="form-control mt-3">
               <button className="btn bg-red-500 hover:bg-red-500 text-white">
-                Login
+                Register
               </button>
-            </div>
-            <p className="text-center mt-1">
-              Do not have account?{" "}
-              <Link to={"/register"}>
-                {" "}
-                <span className="text-red-500 font-semibold">
-                  Register
-                </span>{" "}
-              </Link>{" "}
-            </p>
-            <div className="mx-auto text-2xl mt-2 px-4 py-[6px] rounded-md bg-red-100">
-              <FcGoogle />
+              <p className="text-center mt-2">
+                Already have account?{" "}
+                <Link to={"/login"}>
+                  {" "}
+                  <span className="text-red-500 font-semibold">Login</span>{" "}
+                </Link>{" "}
+              </p>
             </div>
           </form>
         </div>
@@ -64,4 +67,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

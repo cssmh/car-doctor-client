@@ -3,18 +3,46 @@ import logo from "../../assets/logo.svg";
 const Navbar = () => {
   const navLink = (
     <>
-      <li>
-        <NavLink to={"/"}>Home</NavLink>
-      </li>
-      <li>
-        <NavLink to={"/about"}>About</NavLink>
-      </li>
-      <li>
-        <NavLink to={"/my-bookings"}>My Bookings</NavLink>
-      </li>
-      <li>
-        <NavLink to={"/login"}>Login</NavLink>
-      </li>
+      <NavLink
+        className={({ isActive }) =>
+          isActive
+            ? "bg-red-500 hover:bg-red-500 text-white px-2 py-1 rounded-md"
+            : "px-2 py-1 rounded-md"
+        }
+        to={"/"}
+      >
+        Home
+      </NavLink>
+      <NavLink
+        className={({ isActive }) =>
+          isActive
+            ? "bg-red-500 hover:bg-red-500 text-white px-2 py-1 rounded-md"
+            : "px-2 py-1 rounded-md"
+        }
+        to={"/about"}
+      >
+        About
+      </NavLink>
+      <NavLink
+        className={({ isActive }) =>
+          isActive
+            ? "bg-red-500 hover:bg-red-500 text-white px-2 py-1 rounded-md"
+            : "px-2 py-1 rounded-md"
+        }
+        to={"/my-bookings"}
+      >
+        My Bookings
+      </NavLink>
+      <NavLink
+        className={({ isActive }) =>
+          isActive
+            ? "bg-red-500 hover:bg-red-500 text-white px-2 py-1 rounded-md"
+            : "px-2 py-1 rounded-md"
+        }
+        to={"/login"}
+      >
+        Login
+      </NavLink>
     </>
   );
 
@@ -50,12 +78,15 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">{navLink}</ul>
+        <ul className="menu menu-horizontal">{navLink}</ul>
       </div>
       <div className="navbar-end">
-        <a className="text-red-500 border border-red-500 px-4 py-2 font-semibold">
+        <Link
+          to={"/"}
+          className="text-red-500 border border-red-500 px-4 py-2 font-semibold"
+        >
           Appointment
-        </a>
+        </Link>
       </div>
     </div>
   );
