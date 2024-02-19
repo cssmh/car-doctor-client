@@ -12,7 +12,7 @@ const AboutUs = () => {
         <h1 className="font-semibold text-4xl">
           We are qualified<br></br> & of experience<br></br> in this field
         </h1>
-        <p>
+        <p className="text-gray-400">
           There are many variations of passages of Lorem Ipsum available, but
           the majority have suffered alteration in some form, by injected
           humour, or random words which do not look even slightly believable.
