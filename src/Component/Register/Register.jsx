@@ -41,7 +41,10 @@ const Register = () => {
         <div className="text-center lg:text-left mr-0 lg:mr-5">
           <img src={login} className="w-2/3 lg:w-full mx-auto" alt="" />
         </div>
-        <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+        <div
+          data-aos="flip-left"
+          className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100"
+        >
           <form onSubmit={handleRegister} className="card-body">
             <h1 className="text-4xl font-semibold text-center">
               Register now!
