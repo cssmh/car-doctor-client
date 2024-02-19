@@ -3,11 +3,17 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import { RouterProvider } from "react-router-dom";
 import Root from "./Root/Root";
+import AuthProvider from "./AuthProvider/AuthProvider";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <div className="max-w-[1220px] mx-auto">
-    <React.StrictMode>
-    <RouterProvider router={Root} />
-  </React.StrictMode>
+    <AuthProvider>
+      <React.StrictMode>
+        <RouterProvider router={Root} />
+      </React.StrictMode>
+    </AuthProvider>
+    <ToastContainer />
   </div>
 );

@@ -1,6 +1,40 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import login from "../../assets/images/login/login.svg";
+import { toast } from "react-toastify";
+import { useContext } from "react";
+import { AuthContextCar } from "../../AuthProvider/AuthProvider";
 const Register = () => {
+  const navigateTo = useNavigate();
+  const location = useLocation();
+  const { userRegister, updateUser } = useContext(AuthContextCar);
+
+  const handleRegister = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const password = form.password.value;
+    if (password.length < 6) {
+      toast(
+        "Make your password at least 6 character and one Uppercase letter!"
+      );
+      return;
+    } else if (!/[A-Z]/.test(password)) {
+      toast("Add at least one Uppercase letter");
+      return;
+    }
+    userRegister(email, password)
+      .then(() => {
+        updateUser(name)
+          .then(() => {
+            toast("register success");
+            navigateTo(location?.state ? location.state : "/");
+          })
+          .catch((err) => toast.error(err.message));
+      })
+      .catch((err) => toast.error(err.message));
+  };
+
   return (
     <div className="hero">
       <div className="hero-content flex-col lg:flex-row">
@@ -8,7 +42,7 @@ const Register = () => {
           <img src={login} className="w-2/3 lg:w-full mx-auto" alt="" />
         </div>
         <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-          <form className="card-body">
+          <form onSubmit={handleRegister} className="card-body">
             <h1 className="text-4xl font-semibold text-center">
               Register now!
             </h1>
@@ -49,10 +83,12 @@ const Register = () => {
               />
             </div>
             <div className="form-control mt-3">
-              <button className="btn bg-red-500 hover:bg-red-500 text-white">
-                Register
-              </button>
-              <p className="text-center mt-2">
+              <input
+                className="btn bg-red-500 hover:bg-red-500 text-white"
+                type="submit"
+                value="Register"
+              />
+              <p className="text-center mt-3">
                 Already have account?{" "}
                 <Link to={"/login"}>
                   {" "}

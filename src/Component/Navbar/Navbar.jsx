@@ -1,6 +1,13 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.svg";
+import { AuthContextCar } from "../../AuthProvider/AuthProvider";
+import { useContext } from "react";
 const Navbar = () => {
+  const { user, logoutUser } = useContext(AuthContextCar);
+
+  const handleLogout = () => {
+    logoutUser().then().catch();
+  };
   const navLink = (
     <>
       <NavLink
@@ -23,26 +30,35 @@ const Navbar = () => {
       >
         About
       </NavLink>
-      <NavLink
-        className={({ isActive }) =>
-          isActive
-            ? "bg-red-500 hover:bg-red-500 text-white px-2 py-1 rounded-md"
-            : "px-2 py-1 rounded-md"
-        }
-        to={"/my-bookings"}
-      >
-        My Bookings
-      </NavLink>
-      <NavLink
-        className={({ isActive }) =>
-          isActive
-            ? "bg-red-500 hover:bg-red-500 text-white px-2 py-1 rounded-md"
-            : "px-2 py-1 rounded-md"
-        }
-        to={"/login"}
-      >
-        Login
-      </NavLink>
+
+      {user?.email ? (
+        <div>
+          <NavLink
+            className={({ isActive }) =>
+              isActive
+                ? "bg-red-500 hover:bg-red-500 text-white px-2 py-1 rounded-md"
+                : "px-2 py-1 rounded-md"
+            }
+            to={"/my-bookings"}
+          >
+            My Bookings
+          </NavLink>
+          <button onClick={handleLogout} className="px-2 py-1">
+            Log out
+          </button>
+        </div>
+      ) : (
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "bg-red-500 hover:bg-red-500 text-white px-2 py-1 rounded-md"
+              : "px-2 py-1 rounded-md"
+          }
+          to={"/login"}
+        >
+          Login
+        </NavLink>
+      )}
     </>
   );
 
@@ -81,6 +97,7 @@ const Navbar = () => {
         <ul className="menu menu-horizontal">{navLink}</ul>
       </div>
       <div className="navbar-end">
+        <p><img src={user?.photoURL} className="w-10 mr-2 rounded-2xl" alt="" /></p>
         <Link
           to={"/"}
           className="text-red-500 border border-red-500 px-4 py-2 font-semibold"
