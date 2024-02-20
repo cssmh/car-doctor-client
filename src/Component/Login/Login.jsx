@@ -3,7 +3,7 @@ import { FcGoogle } from "react-icons/fc";
 import login from "../../assets/images/login/login.svg";
 import { useContext, useRef } from "react";
 import { AuthContextCar } from "../../AuthProvider/AuthProvider";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
 const Login = () => {
   const navigateTo = useNavigate();
   const location = useLocation();
@@ -19,7 +19,7 @@ const Login = () => {
     googlePopupLogin()
       .then((res) => {
         console.log(res.user);
-        toast("google logged in success");
+        toast.success("google logged in success");
         navigateTo(location?.state ? location.state : "/");
       })
       .catch((err) => toast(err.message));
@@ -32,7 +32,7 @@ const Login = () => {
     const password = form.password.value;
     loginUser(email, password)
       .then(() => {
-        toast("logged in success");
+        toast.success("logged in success");
         navigateTo(location?.state ? location.state : "/");
       })
       .catch((err) => toast.error(err.message));

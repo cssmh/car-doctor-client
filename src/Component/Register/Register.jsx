@@ -1,8 +1,8 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import login from "../../assets/images/login/login.svg";
-import { toast } from "react-toastify";
 import { useContext } from "react";
 import { AuthContextCar } from "../../AuthProvider/AuthProvider";
+import toast from "react-hot-toast";
 const Register = () => {
   const navigateTo = useNavigate();
   const location = useLocation();
@@ -20,7 +20,7 @@ const Register = () => {
     const email = form.email.value;
     const password = form.password.value;
     if (password.length < 6) {
-      toast(
+      toast.error(
         "Make your password at least 6 character and one Uppercase letter!"
       );
       return;
@@ -32,7 +32,7 @@ const Register = () => {
       .then(() => {
         updateUser(name)
           .then(() => {
-            toast("register success");
+            toast.success("register success");
           })
           .catch((err) => toast.error(err.message));
         navigateTo(location?.state ? location.state : "/");
