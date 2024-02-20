@@ -150,10 +150,12 @@ const Navbar = () => {
           </svg>
         </label>
         {/* theme  part ended*/}
-        <img src={user?.photoURL} className="w-10 mr-2 rounded-3xl" alt="" />
+        {user && (
+          <img src={user?.photoURL} className="w-10 mr-2 rounded-3xl" alt="" />
+        )}
         <Link
           to={"/"}
-          className="text-red-500 border border-red-500 px-2 lg:px-4 py-1 lg:py-2 font-semibold"
+          className="text-red-500 border border-red-500 px-2 lg:px-4 py-1 lg:py-2 font-semibold rounded-md"
         >
           Appointment
         </Link>

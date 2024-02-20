@@ -28,11 +28,7 @@ const Root = createBrowserRouter([
       },
       {
         path: "/about",
-        element: (
-          <PrivateRoute>
-            <About />
-          </PrivateRoute>
-        ),
+        element: <About />,
       },
       {
         path: "/my-bookings",

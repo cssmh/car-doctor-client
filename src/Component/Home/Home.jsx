@@ -8,18 +8,18 @@ import Services from "../../HomeComponent/Services/Services";
 import Team from "../../HomeComponent/Team/Team";
 
 const Home = () => {
-    return (
-        <div>
-            <Banner></Banner>
-            <AboutUs></AboutUs>
-            <Services></Services>
-            <Contact></Contact>
-            <Product></Product>
-            <Team></Team>
-            <ChooseUs></ChooseUs>
-            <Customer></Customer>
-        </div>
-    );
+  return (
+    <div>
+      <Banner></Banner>
+      <AboutUs></AboutUs>
+      <Services></Services>
+      <Contact></Contact>
+      <Product></Product>
+      <Team></Team>
+      <ChooseUs></ChooseUs>
+      <Customer></Customer>
+    </div>
+  );
 };
 
 export default Home;
