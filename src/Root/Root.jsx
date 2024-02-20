@@ -7,6 +7,7 @@ import Register from "../Component/Register/Register";
 import About from "../Component/About/About";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import MyBookings from "../Component/MyBookings/MyBookings";
+import CheckOut from "../Component/CheckOut/CheckOut";
 
 const Root = createBrowserRouter([
   {
@@ -37,6 +38,16 @@ const Root = createBrowserRouter([
             <MyBookings />
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/checkout/:id",
+        element: (
+          <PrivateRoute>
+            <CheckOut />
+          </PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/services/${params.id}`),
       },
     ],
   },
