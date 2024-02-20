@@ -57,11 +57,11 @@ const Login = () => {
             <h1 className="text-4xl font-semibold text-center">Login now!</h1>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Your Email</span>
+                <span className="label-text">Email</span>
               </label>
               <input
                 type="email"
-                placeholder="Email"
+                placeholder="Your Email"
                 ref={getEmail}
                 name="email"
                 className="input input-bordered"

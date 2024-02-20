@@ -150,7 +150,7 @@ const Navbar = () => {
           </svg>
         </label>
         {/* theme  part ended*/}
-        {user && (
+        {user?.photoURL && (
           <img src={user?.photoURL} className="w-10 mr-2 rounded-3xl" alt="" />
         )}
         <Link

@@ -28,9 +28,9 @@ const Register = () => {
         updateUser(name)
           .then(() => {
             toast("register success");
-            navigateTo(location?.state ? location.state : "/");
           })
           .catch((err) => toast.error(err.message));
+        navigateTo(location?.state ? location.state : "/");
       })
       .catch((err) => toast.error(err.message));
   };
