@@ -56,7 +56,6 @@ const CheckOut = () => {
             <input
               type="text"
               name="name"
-              defaultValue={user?.displayName}
               className="input input-bordered"
               required
             />
