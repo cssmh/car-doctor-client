@@ -35,8 +35,8 @@ const CheckOut = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        if(data.insertedId){
-            swal("Good job!", "Order added", "success");
+        if (data.insertedId) {
+          swal("Good job!", "Order added", "success");
         }
       });
   };
@@ -99,7 +99,7 @@ const CheckOut = () => {
           </div>
         </div>
         <div className="form-control mt-6">
-          <button className="btn bg-red-500 hover:bg-red-500 text-white">
+          <button className="btn border-none bg-red-500 hover:bg-red-500 text-white">
             Order Confirm
           </button>
         </div>

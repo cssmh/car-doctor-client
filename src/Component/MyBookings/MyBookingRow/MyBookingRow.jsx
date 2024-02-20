@@ -1,10 +1,13 @@
-const MyBookingRow = ({ getRow }) => {
-  const { img, customerName, date, price } = getRow;
+const MyBookingRow = ({ getRow, handleDelete, handleBookingConfirm }) => {
+  const { _id, img, customerName, date, price, status } = getRow;
   return (
     <tr>
       <th>
         <div className="flex gap-5 items-center">
-          <button className="btn btn-sm btn-circle btn-outline">
+          <button
+            onClick={() => handleDelete(_id)}
+            className="btn btn-sm btn-circle btn-outline"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               className="h-6 w-6"
@@ -39,7 +42,18 @@ const MyBookingRow = ({ getRow }) => {
       </td>
       <td>{price}</td>
       <th>
-        <button className="btn btn-ghost btn-xs">Pending</button>
+        {status === "confirm" ? (
+          <button className="btn bg-green-500 hover:bg-green-500 text-white btn-sm">
+            Confirmed
+          </button>
+        ) : (
+          <button
+            onClick={() => handleBookingConfirm(_id)}
+            className="btn bg-red-500 hover:bg-red-500 text-white btn-sm"
+          >
+            Confirm
+          </button>
+        )}
       </th>
     </tr>
   );
