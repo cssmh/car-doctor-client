@@ -27,10 +27,10 @@ const AuthProvider = ({ children }) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
-  const updateUser = (name) => {
-    setLoading(true);
+  const updateUser = (name, photo) => {
     return updateProfile(auth.currentUser, {
       displayName: name,
+      photoURL: photo,
     });
   };
 
@@ -51,7 +51,7 @@ const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
-      // console.log("i am spying on", currentUser);
+      console.log("i am spying on", currentUser);
       setUser(currentUser);
       setLoading(false);
     });

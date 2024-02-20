@@ -4,7 +4,7 @@ import ErrorPage from "../Component/ErrorPage/ErrorPage";
 import Home from "../Component/Home/Home";
 import Login from "../Component/Login/Login";
 import Register from "../Component/Register/Register";
-import About from "../Component/About/About";
+import Profile from "../Component/Profile/Profile";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import MyBookings from "../Component/MyBookings/MyBookings";
 import CheckOut from "../Component/CheckOut/CheckOut";
@@ -28,8 +28,12 @@ const Root = createBrowserRouter([
         element: <Register />,
       },
       {
-        path: "/about",
-        element: <About />,
+        path: "/profile",
+        element: (
+          <PrivateRoute>
+            <Profile />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/my-bookings",
@@ -47,7 +51,9 @@ const Root = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`https://car-doctor-server-ecru-chi.vercel.app/services/${params.id}`),
+          fetch(
+            `https://car-doctor-server-ecru-chi.vercel.app/services/${params.id}`
+          ),
       },
     ],
   },

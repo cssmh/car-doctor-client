@@ -4,8 +4,8 @@ import { FallingLines } from "react-loader-spinner";
 import { Navigate, useLocation } from "react-router-dom";
 
 const PrivateRoute = ({ children }) => {
-  const { user, loading } = useContext(AuthContextCar);
   const loc = useLocation();
+  const { user, loading } = useContext(AuthContextCar);
   if (loading) {
     return (
       <div className="flex justify-center">
@@ -18,6 +18,7 @@ const PrivateRoute = ({ children }) => {
       </div>
     );
   }
+
   if (user) {
     return children;
   } else {

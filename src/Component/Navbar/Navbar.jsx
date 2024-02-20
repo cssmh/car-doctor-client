@@ -26,9 +26,9 @@ const Navbar = () => {
             ? "bg-red-500 hover:bg-red-500 text-white px-2 py-1 rounded-md"
             : "px-2 py-1 rounded-md"
         }
-        to={"/about"}
+        to={"/profile"}
       >
-        About
+        Profile
       </NavLink>
 
       {user?.email ? (
