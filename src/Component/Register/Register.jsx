@@ -6,7 +6,12 @@ import { AuthContextCar } from "../../AuthProvider/AuthProvider";
 const Register = () => {
   const navigateTo = useNavigate();
   const location = useLocation();
-  const { userRegister, updateUser } = useContext(AuthContextCar);
+  const { user, userRegister, updateUser } = useContext(AuthContextCar);
+
+  // first check and navigate
+  if (user) {
+    navigateTo("/");
+  }
 
   const handleRegister = (e) => {
     e.preventDefault();

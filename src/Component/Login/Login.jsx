@@ -7,8 +7,13 @@ import { toast } from "react-toastify";
 const Login = () => {
   const navigateTo = useNavigate();
   const location = useLocation();
-  const { loginUser, googlePopupLogin, resetPassword } =
+  const { user, loginUser, googlePopupLogin, resetPassword } =
     useContext(AuthContextCar);
+
+  // first check and navigate
+  if (user) {
+    navigateTo("/");
+  }
 
   const handleGoogleLogin = () => {
     googlePopupLogin()
