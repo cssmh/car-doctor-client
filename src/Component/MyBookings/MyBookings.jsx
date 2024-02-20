@@ -71,7 +71,7 @@ const MyBookings = () => {
     <div>
       <CheckBanner></CheckBanner>
       <p className="text-center mt-6 font-semibold text-2xl">
-        {user?.displayName} Your Total booking is {bookings.length}
+        {user?.displayName} total {bookings.length} booking
       </p>
       <div className="overflow-x-auto my-10">
         <table className="table">

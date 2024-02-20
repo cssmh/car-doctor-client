@@ -9,7 +9,7 @@ const Customer = () => {
         the majority have suffered alteration in some form, by injected humour,
         <br></br> or random words which do not look even slightly believable.
       </p>
-      <div className="flex justify-center mt-9 gap-6">
+      <div className="flex flex-col lg:flex-row justify-center mt-9 gap-6 mx-2 lg:mx-0">
         <div className="p-10 border border-gray-300 rounded-lg">
           <div data-aos="zoom-in" className="flex justify-between items-center">
             <div className="flex items-center gap-4 mb-2">
