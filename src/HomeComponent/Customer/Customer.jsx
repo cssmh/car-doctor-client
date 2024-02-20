@@ -18,10 +18,10 @@ const Customer = () => {
           >
             <div className="flex items-center gap-4 mb-2">
               <img src={customer} className="w-12 rounded-3xl" alt="" />
-              <p>
+              <div>
                 <h1 className="font-semibold">Md. Momin Hossain</h1>
                 <p>Engineer</p>
-              </p>
+              </div>
             </div>
             <img src={quote} className="w-9" alt="" />
           </div>
@@ -66,10 +66,10 @@ const Customer = () => {
           >
             <div className="flex items-center gap-4 mb-2">
               <img src={customer} className="w-12 rounded-3xl" alt="" />
-              <p>
+              <div>
                 <h1 className="font-semibold">Md. Momin Hossain</h1>
                 <p>Engineer</p>
-              </p>
+              </div>
             </div>
             <img src={quote} className="w-9" alt="" />
           </div>
