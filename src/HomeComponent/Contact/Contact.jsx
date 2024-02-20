@@ -3,13 +3,13 @@ import { IoMdCall } from "react-icons/io";
 import { IoLocationOutline } from "react-icons/io5";
 const Contact = () => {
   return (
-    <div className="rounded-lg mt-16 mb-12 bg-black text-white grid grid-cols-1 lg:grid-cols-3 px-20 py-16">
+    <div className="rounded-lg mt-16 mb-12 bg-black text-white grid grid-cols-1 lg:grid-cols-3 px-12 md:px-20 py-10 md:py-16 space-y-6 md:space-y-0">
       <div className="flex items-center gap-3">
         <p className="text-3xl text-red-500">
           <FaRegCalendarCheck />
         </p>
         <div>
-          <p>We are open mon-fri</p>
+          <p>We are open Monday-Friday</p>
           <p className="font-semibold">7:00 am - 9:00 pm</p>
         </div>
       </div>
