@@ -5,6 +5,7 @@ import login from "../../assets/images/login/login.svg";
 import { useContext, useRef, useState } from "react";
 import { AuthContextCar } from "../../AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
+import axios from "axios";
 const Login = () => {
   const [view, setView] = useState(true);
   const navigateTo = useNavigate();
@@ -29,8 +30,18 @@ const Login = () => {
     const password = form.password.value;
     loginUser(email, password)
       .then(() => {
-        toast.success("logged in success");
-        navigateTo(location?.state ? location.state : "/");
+        // generate token from server
+        const user = { email };
+        axios
+          .post("http://localhost:5000/jwt", user, { withCredentials: true })
+          .then((res) => {
+            console.log(res.data);
+            if (res.data.success) {
+              toast.success("logged in success");
+              navigateTo(location?.state ? location.state : "/");
+            }
+          });
+        // generate token from server end
       })
       .catch((err) => toast.error(err.message));
   };

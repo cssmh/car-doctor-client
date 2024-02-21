@@ -57,7 +57,7 @@ const Root = createBrowserRouter([
         ),
         loader: ({ params }) =>
           fetch(
-            `https://car-doctor-server-ecru-chi.vercel.app/services/${params.id}`
+            `http://localhost:5000/services/${params.id}`
           ),
       },
     ],

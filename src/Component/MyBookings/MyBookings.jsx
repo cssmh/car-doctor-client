@@ -4,18 +4,17 @@ import CheckBanner from "../CheckBanner/CheckBanner";
 import MyBookingRow from "./MyBookingRow/MyBookingRow";
 import swal from "sweetalert";
 import { toast } from "react-toastify";
+import axios from "axios";
 
 const MyBookings = () => {
   const { user } = useContext(AuthContextCar);
   const [bookings, setBookings] = useState([]);
 
-  const url = `https://car-doctor-server-ecru-chi.vercel.app/bookings?email=${user?.email}`;
+  const url = `http://localhost:5000/bookings?email=${user?.email}`;
   useEffect(() => {
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => {
-        setBookings(data);
-      });
+    axios.get(url, { withCredentials: true }).then((res) => {
+      setBookings(res.data);
+    });
   }, [url]);
 
   const handleDelete = (idx) => {
@@ -27,7 +26,7 @@ const MyBookings = () => {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        fetch(`https://car-doctor-server-ecru-chi.vercel.app/bookings/${idx}`, {
+        fetch(`http://localhost:5000/bookings/${idx}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -47,7 +46,7 @@ const MyBookings = () => {
   };
 
   const handleBookingConfirm = (idx) => {
-    fetch(`https://car-doctor-server-ecru-chi.vercel.app/bookings/${idx}`, {
+    fetch(`http://localhost:5000/bookings/${idx}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
