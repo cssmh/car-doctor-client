@@ -26,9 +26,9 @@ const Navbar = () => {
             ? "bg-red-500 hover:bg-red-500 text-white px-2 py-1 rounded-md"
             : "px-2 py-1 rounded-md"
         }
-        to={"/profile"}
+        to={"/about"}
       >
-        Profile
+        About
       </NavLink>
       {user?.email ? (
         <NavLink
@@ -88,7 +88,7 @@ const Navbar = () => {
   // use theme from local storage if available or set light theme end
 
   return (
-    <div className="navbar bg-base-200 px-4 rounded-md my-6">
+    <div className="navbar bg-base-200 px-3 rounded-md my-6">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -153,7 +153,11 @@ const Navbar = () => {
         </label>
         {/* theme  part ended*/}
         {user?.photoURL && (
-          <img src={user?.photoURL} className="w-10 mr-2 rounded-3xl" alt="" />
+          <Link to={"/profile"}>
+            <div className="w-10 mr-2">
+              <img src={user?.photoURL} className="rounded-3xl" alt="" />
+            </div>
+          </Link>
         )}
         <Link
           to={"/"}

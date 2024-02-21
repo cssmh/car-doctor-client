@@ -8,6 +8,7 @@ import Profile from "../Component/Profile/Profile";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import MyBookings from "../Component/MyBookings/MyBookings";
 import CheckOut from "../Component/CheckOut/CheckOut";
+import About from "../Component/About/About";
 
 const Root = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const Root = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/about",
+        element: <About />,
       },
       {
         path: "/login",

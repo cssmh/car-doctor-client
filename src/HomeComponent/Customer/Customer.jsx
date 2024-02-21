@@ -16,7 +16,7 @@ const Customer = () => {
               <img src={customer} className="w-12 rounded-3xl" alt="" />
               <div>
                 <h1 className="font-semibold">Md. Momin Hossain</h1>
-                <p>Engineer</p>
+                <p>Businessman</p>
               </div>
             </div>
             <img src={quote} className="w-9" alt="" />
@@ -60,7 +60,7 @@ const Customer = () => {
               <img src={customer} className="w-12 rounded-3xl" alt="" />
               <div>
                 <h1 className="font-semibold">Md. Momin Hossain</h1>
-                <p>Engineer</p>
+                <p>Businessman</p>
               </div>
             </div>
             <img src={quote} className="w-9" alt="" />

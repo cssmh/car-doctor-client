@@ -1,4 +1,4 @@
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import login from "../../assets/images/login/login.svg";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { useContext, useState } from "react";
@@ -7,13 +7,7 @@ import toast from "react-hot-toast";
 const Register = () => {
   const [view, setView] = useState(true);
   const navigateTo = useNavigate();
-  const location = useLocation();
-  const { user, userRegister, updateUser } = useContext(AuthContextCar);
-
-  // first check and navigate
-  if (user) {
-    navigateTo("/");
-  }
+  const { userRegister, updateUser } = useContext(AuthContextCar);
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -37,7 +31,7 @@ const Register = () => {
             toast.success("register success");
           })
           .catch((err) => toast.error(err.message));
-        navigateTo(location?.state ? location.state : "/");
+        navigateTo("/");
       })
       .catch((err) => toast.error(err.message));
   };

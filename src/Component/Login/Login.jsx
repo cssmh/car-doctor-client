@@ -9,13 +9,8 @@ const Login = () => {
   const [view, setView] = useState(true);
   const navigateTo = useNavigate();
   const location = useLocation();
-  const { user, loginUser, googlePopupLogin, resetPassword } =
+  const { loginUser, googlePopupLogin, resetPassword } =
     useContext(AuthContextCar);
-
-  // first check and navigate
-  if (user) {
-    navigateTo("/");
-  }
 
   const handleGoogleLogin = () => {
     googlePopupLogin()

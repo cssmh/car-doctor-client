@@ -77,11 +77,10 @@ const CheckOut = () => {
               <span className="label-text">Email</span>
             </label>
             <input
-              type="email"
               name="email"
+              readOnly
               defaultValue={user?.email}
               className="input input-bordered"
-              required
             />
           </div>
           <div className="form-control">
@@ -89,12 +88,10 @@ const CheckOut = () => {
               <span className="label-text">Due Amount</span>
             </label>
             <input
-              type="text"
               name="due"
               readOnly
               defaultValue={"$" + price}
               className="input input-bordered"
-              required
             />
           </div>
         </div>
