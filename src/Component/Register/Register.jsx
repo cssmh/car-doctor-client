@@ -1,9 +1,11 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import login from "../../assets/images/login/login.svg";
-import { useContext } from "react";
+import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
+import { useContext, useState } from "react";
 import { AuthContextCar } from "../../AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
 const Register = () => {
+  const [view, setView] = useState(true);
   const navigateTo = useNavigate();
   const location = useLocation();
   const { user, userRegister, updateUser } = useContext(AuthContextCar);
@@ -80,15 +82,21 @@ const Register = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Password</span>
+                <span className="label-text">Confirm Password</span>
               </label>
               <input
-                type="password"
+                type={view ? "password" : "text"}
                 name="password"
                 placeholder="Password"
                 className="input input-bordered"
                 required
               />
+              <span
+                className="absolute top-[316px] right-11"
+                onClick={() => setView(!view)}
+              >
+                {view ? <FaRegEyeSlash /> : <FaRegEye />}
+              </span>
             </div>
             <div className="form-control mt-3">
               <input

@@ -30,23 +30,17 @@ const Navbar = () => {
       >
         Profile
       </NavLink>
-
       {user?.email ? (
-        <div>
-          <NavLink
-            className={({ isActive }) =>
-              isActive
-                ? "bg-red-500 hover:bg-red-500 text-white px-2 py-1 rounded-md"
-                : "px-2 py-1 rounded-md"
-            }
-            to={"/my-bookings"}
-          >
-            My Bookings
-          </NavLink>
-          <button onClick={handleLogout} className="px-2 py-1">
-            Log out
-          </button>
-        </div>
+        <NavLink
+          className={({ isActive }) =>
+            isActive
+              ? "bg-red-500 hover:bg-red-500 text-white px-2 py-1 rounded-md"
+              : "px-2 py-1 rounded-md"
+          }
+          to={"/my-bookings"}
+        >
+          My Bookings
+        </NavLink>
       ) : (
         <NavLink
           className={({ isActive }) =>
@@ -58,6 +52,14 @@ const Navbar = () => {
         >
           Login
         </NavLink>
+      )}
+      {user && (
+        // div for dropdown problem in mobile responsive
+        <div>
+          <button onClick={handleLogout} className="px-2 py-1">
+            Sign out
+          </button>
+        </div>
       )}
     </>
   );
@@ -155,7 +157,7 @@ const Navbar = () => {
         )}
         <Link
           to={"/"}
-          className="text-red-500 border border-red-500 px-2 lg:px-4 py-1 lg:py-2 font-semibold rounded-md"
+          className="text-red-500 border border-red-500 px-1 lg:px-4 py-1 lg:py-2 font-semibold rounded-md"
         >
           Appointment
         </Link>

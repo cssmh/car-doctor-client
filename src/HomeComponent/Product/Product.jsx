@@ -18,7 +18,7 @@ const Product = () => {
           <img
             data-aos="zoom-in"
             src={product1}
-            className="rounded-lg lg:w-44 lg:h-40 mx-auto"
+            className="rounded-lg lg:w-44 h-32 lg:h-40 mx-auto"
             alt=""
           />
           <div className="rating">
@@ -55,7 +55,7 @@ const Product = () => {
           <img
             data-aos="zoom-in"
             src={product2}
-            className="rounded-lg lg:w-44 lg:h-40 mx-auto"
+            className="rounded-lg lg:w-44 h-32 lg:h-40 mx-auto"
             alt=""
           />
           <div className="rating">
@@ -92,7 +92,7 @@ const Product = () => {
           <img
             data-aos="zoom-in"
             src={product3}
-            className="rounded-lg lg:w-44 lg:h-40 mx-auto"
+            className="rounded-lg lg:w-44 h-32 lg:h-40 mx-auto"
             alt=""
           />
           <div className="rating">
@@ -129,7 +129,7 @@ const Product = () => {
           <img
             data-aos="zoom-in"
             src={product4}
-            className="rounded-lg lg:w-44 lg:h-40 mx-auto"
+            className="rounded-lg lg:w-44 h-32 lg:h-40 mx-auto"
             alt=""
           />
           <div className="rating">
@@ -166,7 +166,7 @@ const Product = () => {
           <img
             data-aos="zoom-in"
             src={product5}
-            className="rounded-lg lg:w-44 lg:h-40 mx-auto"
+            className="rounded-lg lg:w-44 h-32 lg:h-40 mx-auto"
             alt=""
           />
           <div className="rating">
@@ -203,7 +203,7 @@ const Product = () => {
           <img
             data-aos="zoom-in"
             src={product6}
-            className="rounded-lg lg:w-44 lg:h-40 mx-auto"
+            className="rounded-lg lg:w-44 h-32 lg:h-40 mx-auto"
             alt=""
           />
           <div className="rating">

@@ -10,11 +10,11 @@ const AboutUs = () => {
         <img src={person} className="w-4/5 rounded-lg mx-auto lg:mx-0" alt="" />
         <img
           src={parts}
-          className="w-2/5 absolute right-5 lg:right-16 top-48 border-8 border-white rounded-lg"
+          className="w-2/5 absolute right-5 lg:right-16 top-32 lg:top-48 border-8 border-white rounded-lg"
           alt=""
         />
       </div>
-      <div className="lg:w-1/2 space-y-3 mt-16 lg:mt-0 text-center lg:text-left">
+      <div className="lg:w-1/2 space-y-4 mt-16 lg:mt-0 text-center lg:text-left">
         <p className="text-red-500 font-semibold">About Us</p>
         <h1 className="font-semibold text-4xl">
           We are qualified<br></br> & of experience<br></br> in this field

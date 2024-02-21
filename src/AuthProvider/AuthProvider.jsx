@@ -51,7 +51,7 @@ const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
-      console.log("i am spying on", currentUser);
+      // console.log("i am spying on", currentUser);
       setUser(currentUser);
       setLoading(false);
     });

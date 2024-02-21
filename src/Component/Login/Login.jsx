@@ -1,10 +1,12 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
+import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import login from "../../assets/images/login/login.svg";
-import { useContext, useRef } from "react";
+import { useContext, useRef, useState } from "react";
 import { AuthContextCar } from "../../AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
 const Login = () => {
+  const [view, setView] = useState(true);
   const navigateTo = useNavigate();
   const location = useLocation();
   const { user, loginUser, googlePopupLogin, resetPassword } =
@@ -73,20 +75,26 @@ const Login = () => {
                 required
               />
             </div>
-            <div className="form-control">
+            <div className="form-control relative">
               <label className="label">
                 <span className="label-text">Password</span>
               </label>
               <input
-                type="password"
+                type={view ? "password" : "text"}
                 name="password"
                 placeholder="Password"
                 className="input input-bordered"
                 required
               />
+              <span
+                className="absolute top-[50px] right-3"
+                onClick={() => setView(!view)}
+              >
+                {view ? <FaRegEyeSlash /> : <FaRegEye />}
+              </span>
               <label className="label">
                 <div className="label-text-alt link link-hover">
-                  <button onClick={handleForgotPassword}>
+                  <button onClick={handleForgotPassword} type="button">
                     Forgot password?
                   </button>
                 </div>
