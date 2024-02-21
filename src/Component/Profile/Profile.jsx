@@ -1,10 +1,11 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContextCar } from "../../AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
 
 const Profile = () => {
   const { user, updateUser } = useContext(AuthContextCar);
   const { photoURL, email, displayName, metadata } = user;
+  const [dp, setDp] = useState(photoURL);
   const handleUpdate = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -13,6 +14,7 @@ const Profile = () => {
     updateUser(name, photo)
       .then(() => {
         toast.success("update success");
+        setDp(photo);
       })
       .catch((err) => toast.error(err.message));
   };
@@ -22,7 +24,7 @@ const Profile = () => {
       <div className="flex flex-col-reverse lg:flex-row items-center gap-5">
         <div className="lg:w-1/2">
           <img
-            src={photoURL}
+            src={dp}
             className="rounded-lg lg:w-60 ml-auto px-3 lg:px-0"
             alt=""
           />
@@ -54,9 +56,8 @@ const Profile = () => {
           <input
             type="text"
             name="photo"
-            defaultValue={user?.photoURL}
+            defaultValue={dp}
             className="input input-bordered text-gray-500"
-            required
           />
         </div>
         <div className="form-control mt-6">

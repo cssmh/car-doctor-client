@@ -50,9 +50,6 @@ const Banner = () => {
               <button className="btn bg-red-500 hover:bg-red-500 text-white border-none mr-5">
                 Discover More
               </button>
-              <button className="btn btn-outline btn-secondary">
-                Latest Project
-              </button>
             </div>
           </div>
         </div>

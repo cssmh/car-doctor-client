@@ -152,11 +152,20 @@ const Navbar = () => {
           </svg>
         </label>
         {/* theme  part ended*/}
-        {user?.photoURL && (
+        {user?.photoURL ? (
           <Link to={"/profile"}>
             <div className="w-10 mr-2">
               <img src={user?.photoURL} className="rounded-3xl" alt="" />
             </div>
+          </Link>
+        ) : (
+          <Link to={"/profile"}>
+            <button
+              type="button"
+              className="text-white bg-gradient-to-r from-red-500 to-red-700 shadow-lg shadow-red-500/50 font-medium rounded-lg text-sm px-2 py-[6px] text-center me-2"
+            >
+              Profile
+            </button>
           </Link>
         )}
         <Link

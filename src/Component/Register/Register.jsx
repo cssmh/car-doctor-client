@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import login from "../../assets/images/login/login.svg";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { useContext, useState } from "react";
@@ -7,6 +7,7 @@ import toast from "react-hot-toast";
 const Register = () => {
   const [view, setView] = useState(true);
   const navigateTo = useNavigate();
+  const loc = useLocation();
   const { userRegister, updateUser } = useContext(AuthContextCar);
 
   const handleRegister = (e) => {
@@ -21,7 +22,7 @@ const Register = () => {
       );
       return;
     } else if (!/[A-Z]/.test(password)) {
-      toast("Add at least one Uppercase letter");
+      toast.error("Add at least one Uppercase letter");
       return;
     }
     userRegister(email, password)
@@ -31,7 +32,7 @@ const Register = () => {
             toast.success("register success");
           })
           .catch((err) => toast.error(err.message));
-        navigateTo("/");
+        navigateTo(loc?.state ? loc.state : "/");
       })
       .catch((err) => toast.error(err.message));
   };

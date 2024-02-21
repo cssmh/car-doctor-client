@@ -43,7 +43,7 @@ const Login = () => {
       return;
     } else {
       resetPassword(email)
-        .then(toast("reset email sent!"))
+        .then(toast.success("reset email sent!"))
         .catch((err) => toast(err.message));
     }
   };
@@ -105,7 +105,7 @@ const Login = () => {
           </form>
           <p className="text-center mt-3">
             Do not have account?{" "}
-            <Link to={"/register"}>
+            <Link to={"/register"} state={location.state}>
               {" "}
               <span className="text-red-500 font-semibold">Register</span>{" "}
             </Link>{" "}
