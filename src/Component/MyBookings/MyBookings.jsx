@@ -10,7 +10,7 @@ const MyBookings = () => {
   const { user } = useContext(AuthContextCar);
   const [bookings, setBookings] = useState([]);
 
-  const url = `http://localhost:5000/bookings?email=${user?.email}`;
+  const url = `https://car-doctor-server-ecru-chi.vercel.app/bookings?email=${user?.email}`;
   useEffect(() => {
     axios.get(url, { withCredentials: true }).then((res) => {
       setBookings(res.data);
@@ -26,7 +26,7 @@ const MyBookings = () => {
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
-        fetch(`http://localhost:5000/bookings/${idx}`, {
+        fetch(`https://car-doctor-server-ecru-chi.vercel.app/bookings/${idx}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -46,7 +46,7 @@ const MyBookings = () => {
   };
 
   const handleBookingConfirm = (idx) => {
-    fetch(`http://localhost:5000/bookings/${idx}`, {
+    fetch(`https://car-doctor-server-ecru-chi.vercel.app/bookings/${idx}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",
