@@ -1,9 +1,9 @@
+import useContextHook from "../../useCustomHook/useContextHook";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import useContextHook from "../../CustomHook/useContextHook";
 
 const Profile = () => {
-  const { user, updateUser } = useContextHook()
+  const { user, updateUser } = useContextHook();
   const { photoURL, email, displayName, metadata } = user;
   const [dp, setDp] = useState(photoURL);
   const handleUpdate = (e) => {

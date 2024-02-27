@@ -1,6 +1,6 @@
 import { FallingLines } from "react-loader-spinner";
+import useContextHook from "../useCustomHook/useContextHook";
 import { Navigate, useLocation } from "react-router-dom";
-import useContextHook from "../CustomHook/useContextHook";
 
 const PrivateRoute = ({ children }) => {
   const loc = useLocation();

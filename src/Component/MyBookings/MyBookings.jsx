@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import CheckBanner from "../CheckBanner/CheckBanner";
+import useContextHook from "../../useCustomHook/useContextHook";
+import useAxiosHook from "../../useCustomHook/useAxiosHook";
 import MyBookingRow from "./MyBookingRow/MyBookingRow";
-import useContextHook from "../../CustomHook/useContextHook";
 import swal from "sweetalert";
 import { toast } from "react-toastify";
-import useAxiosHook from "../../CustomHook/useAxiosHook";
 
 const MyBookings = () => {
   const { user } = useContextHook();
@@ -14,7 +14,7 @@ const MyBookings = () => {
   // used axios custom hook
   const url = `/bookings?email=${user?.email}`;
   useEffect(() => {
-    axiosCustom.get(url).then((res) => setBookings(res.data));
+    axiosCustom?.get(url)?.then((res) => setBookings(res.data));
   }, [axiosCustom, url]);
 
   const handleDelete = (idx) => {
