@@ -1,10 +1,10 @@
 import { useLoaderData } from "react-router-dom";
 import CheckBanner from "../CheckBanner/CheckBanner";
 import swal from "sweetalert";
-import ContextHook from "../../CustomHook/ContextHook";
+import useContextHook from "../../CustomHook/useContextHook";
 
 const CheckOut = () => {
-  const { user } = ContextHook()
+  const { user } = useContextHook()
   const loadData = useLoaderData();
   //   console.log(loadData);
   const { _id, title, price, img } = loadData;

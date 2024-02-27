@@ -4,13 +4,13 @@ import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import login from "../../assets/images/login/login.svg";
 import toast from "react-hot-toast";
 import { useRef, useState } from "react";
-import ContextHook from "../../CustomHook/ContextHook";
+import useContextHook from "../../CustomHook/useContextHook";
 
 const Login = () => {
   const [view, setView] = useState(true);
   const navigateTo = useNavigate();
   const location = useLocation();
-  const { loginUser, googlePopupLogin, resetPassword } = ContextHook();
+  const { loginUser, googlePopupLogin, resetPassword } = useContextHook();
 
   const handleGoogleLogin = () => {
     googlePopupLogin()

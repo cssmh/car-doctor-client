@@ -1,21 +1,21 @@
 import { useEffect, useState } from "react";
 import CheckBanner from "../CheckBanner/CheckBanner";
 import MyBookingRow from "./MyBookingRow/MyBookingRow";
-import ContextHook from "../../CustomHook/ContextHook";
+import useContextHook from "../../CustomHook/useContextHook";
 import swal from "sweetalert";
 import { toast } from "react-toastify";
-import axios from "axios";
+import useAxiosHook from "../../CustomHook/useAxiosHook";
 
 const MyBookings = () => {
-  const { user } = ContextHook();
+  const { user } = useContextHook();
   const [bookings, setBookings] = useState([]);
+  const axiosCustom = useAxiosHook();
 
-  const url = `http://localhost:5000/bookings?email=${user?.email}`;
+  // used axios custom hook
+  const url = `/bookings?email=${user?.email}`;
   useEffect(() => {
-    axios.get(url, { withCredentials: true }).then((res) => {
-      setBookings(res.data);
-    });
-  }, [url]);
+    axiosCustom.get(url).then((res) => setBookings(res.data));
+  }, [axiosCustom, url]);
 
   const handleDelete = (idx) => {
     swal({

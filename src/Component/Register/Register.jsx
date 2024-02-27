@@ -3,12 +3,12 @@ import login from "../../assets/images/login/login.svg";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import ContextHook from "../../CustomHook/ContextHook";
+import useContextHook from "../../CustomHook/useContextHook";
 const Register = () => {
   const [view, setView] = useState(true);
   const navigateTo = useNavigate();
   const loc = useLocation();
-  const { userRegister, updateUser } = ContextHook();
+  const { userRegister, updateUser } = useContextHook();
 
   const handleRegister = (e) => {
     e.preventDefault();

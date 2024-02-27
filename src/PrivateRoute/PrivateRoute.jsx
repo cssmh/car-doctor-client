@@ -1,10 +1,10 @@
 import { FallingLines } from "react-loader-spinner";
 import { Navigate, useLocation } from "react-router-dom";
-import ContextHook from "../CustomHook/ContextHook";
+import useContextHook from "../CustomHook/useContextHook";
 
 const PrivateRoute = ({ children }) => {
   const loc = useLocation();
-  const { user, loading } = ContextHook();
+  const { user, loading } = useContextHook();
   if (loading) {
     return (
       <div className="flex justify-center">

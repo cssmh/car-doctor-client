@@ -1,9 +1,9 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.svg";
 import { useEffect, useState } from "react";
-import ContextHook from "../../CustomHook/ContextHook";
+import useContextHook from "../../CustomHook/useContextHook";
 const Navbar = () => {
-  const { user, logoutUser } = ContextHook();
+  const { user, logoutUser } = useContextHook();
 
   const handleLogout = () => {
     logoutUser().then().catch();
