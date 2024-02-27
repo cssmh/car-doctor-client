@@ -2,21 +2,20 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import login from "../../assets/images/login/login.svg";
-import { useContext, useRef, useState } from "react";
-import { AuthContextCar } from "../../AuthProvider/AuthProvider";
 import toast from "react-hot-toast";
-import axios from "axios";
+import { useRef, useState } from "react";
+import ContextHook from "../../CustomHook/ContextHook";
+
 const Login = () => {
   const [view, setView] = useState(true);
   const navigateTo = useNavigate();
   const location = useLocation();
-  const { loginUser, googlePopupLogin, resetPassword } =
-    useContext(AuthContextCar);
+  const { loginUser, googlePopupLogin, resetPassword } = ContextHook();
 
   const handleGoogleLogin = () => {
     googlePopupLogin()
-      .then((res) => {
-        console.log(res.user);
+      .then(() => {
+        // console.log(res.user);
         toast.success("google logged in success");
         navigateTo(location?.state ? location.state : "/");
       })
@@ -30,18 +29,9 @@ const Login = () => {
     const password = form.password.value;
     loginUser(email, password)
       .then(() => {
-        // generate token from server
-        const user = { email };
-        axios
-          .post("https://car-doctor-server-ecru-chi.vercel.app/jwt", user, { withCredentials: true })
-          .then((res) => {
-            console.log(res.data);
-            if (res.data.success) {
-              toast.success("logged in success");
-              navigateTo(location?.state ? location.state : "/");
-            }
-          });
-        // generate token from server end
+        // console.log(res.user);
+        toast.success("Logged in success");
+        navigateTo(location?.state ? location.state : "/");
       })
       .catch((err) => toast.error(err.message));
   };

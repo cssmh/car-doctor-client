@@ -10,6 +10,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 import auth from "../Firebase/firebase.config";
+import axios from "axios";
 
 export const AuthContextCar = createContext(null);
 const providerGoogle = new GoogleAuthProvider();
@@ -52,13 +53,28 @@ const AuthProvider = ({ children }) => {
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       // console.log("i am spying on", currentUser);
+      const loggedEmail = currentUser?.email || user?.email;
+      const getEmail = { email: loggedEmail };
       setUser(currentUser);
       setLoading(false);
+      if (loggedEmail) {
+        axios
+          .post("http://localhost:5000/jwt", getEmail, {
+            withCredentials: true,
+          })
+          .then((res) => console.log("login token response", res.data));
+      } else {
+        axios
+          .post("http://localhost:5000/logout", getEmail, {
+            withCredentials: true,
+          })
+          .then((res) => console.log("logout token response", res.data));
+      }
     });
     return () => {
       unSubscribe();
     };
-  }, []);
+  }, [user?.email]);
 
   const allAuth = {
     user,

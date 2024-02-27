@@ -1,11 +1,10 @@
 import { useLoaderData } from "react-router-dom";
 import CheckBanner from "../CheckBanner/CheckBanner";
-import { useContext } from "react";
-import { AuthContextCar } from "../../AuthProvider/AuthProvider";
 import swal from "sweetalert";
+import ContextHook from "../../CustomHook/ContextHook";
 
 const CheckOut = () => {
-  const { user } = useContext(AuthContextCar);
+  const { user } = ContextHook()
   const loadData = useLoaderData();
   //   console.log(loadData);
   const { _id, title, price, img } = loadData;
@@ -25,7 +24,7 @@ const CheckOut = () => {
       service_id: _id,
       price: due,
     };
-    fetch("https://car-doctor-server-ecru-chi.vercel.app/bookings", {
+    fetch("http://localhost:5000/bookings", {
       method: "POST",
       headers: {
         "content-type": "application/json",

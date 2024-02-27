@@ -1,11 +1,10 @@
-import { useContext } from "react";
-import { AuthContextCar } from "../AuthProvider/AuthProvider";
 import { FallingLines } from "react-loader-spinner";
 import { Navigate, useLocation } from "react-router-dom";
+import ContextHook from "../CustomHook/ContextHook";
 
 const PrivateRoute = ({ children }) => {
   const loc = useLocation();
-  const { user, loading } = useContext(AuthContextCar);
+  const { user, loading } = ContextHook();
   if (loading) {
     return (
       <div className="flex justify-center">

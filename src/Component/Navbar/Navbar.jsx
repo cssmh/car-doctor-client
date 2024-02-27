@@ -1,9 +1,9 @@
 import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/logo.svg";
-import { AuthContextCar } from "../../AuthProvider/AuthProvider";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import ContextHook from "../../CustomHook/ContextHook";
 const Navbar = () => {
-  const { user, logoutUser } = useContext(AuthContextCar);
+  const { user, logoutUser } = ContextHook();
 
   const handleLogout = () => {
     logoutUser().then().catch();
@@ -78,7 +78,7 @@ const Navbar = () => {
     }
   };
 
-  // set theme state in localstorage on mount & also update localstorage on state change
+  // set theme state in local storage on mount & also update local storage on state change
   useEffect(() => {
     localStorage.setItem("theme", theme);
     const localTheme = localStorage.getItem("theme");

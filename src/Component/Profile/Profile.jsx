@@ -1,9 +1,9 @@
-import { useContext, useState } from "react";
-import { AuthContextCar } from "../../AuthProvider/AuthProvider";
+import { useState } from "react";
 import toast from "react-hot-toast";
+import ContextHook from "../../CustomHook/ContextHook";
 
 const Profile = () => {
-  const { user, updateUser } = useContext(AuthContextCar);
+  const { user, updateUser } = ContextHook()
   const { photoURL, email, displayName, metadata } = user;
   const [dp, setDp] = useState(photoURL);
   const handleUpdate = (e) => {
