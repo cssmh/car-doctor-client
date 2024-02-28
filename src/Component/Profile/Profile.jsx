@@ -1,4 +1,4 @@
-import useContextHook from "../../useCustomHook/useContextHook";
+import useContextHook from "../../CustomHook/useContextHook";
 import { useState } from "react";
 import toast from "react-hot-toast";
 

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import CheckBanner from "../CheckBanner/CheckBanner";
-import useContextHook from "../../useCustomHook/useContextHook";
-import useAxiosHook from "../../useCustomHook/useAxiosHook";
+import useContextHook from "../../CustomHook/useContextHook";
+import useAxiosHook from "../../CustomHook/useAxiosHook";
 import MyBookingRow from "./MyBookingRow/MyBookingRow";
 import swal from "sweetalert";
 import { toast } from "react-toastify";

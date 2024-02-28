@@ -1,7 +1,7 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
-import useContextHook from "../../useCustomHook/useContextHook";
+import useContextHook from "../../CustomHook/useContextHook";
 import login from "../../assets/images/login/login.svg";
 import toast from "react-hot-toast";
 import { useRef, useState } from "react";

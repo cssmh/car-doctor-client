@@ -1,12 +1,5 @@
-import Skeleton from "react-loading-skeleton";
-import "react-loading-skeleton/dist/skeleton.css";
 const About = () => {
-  return (
-    <div className="text-center">
-      <Skeleton variant="rectangular" width={1220} height={70} />
-      <Skeleton variant="rounded" width={1220} height={70} />
-    </div>
-  );
+  return <p className="text-center my-12 text-red-500">Nothing Here!</p>;
 };
 
 export default About;

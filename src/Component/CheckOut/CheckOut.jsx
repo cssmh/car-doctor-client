@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import CheckBanner from "../CheckBanner/CheckBanner";
-import useContextHook from "../../useCustomHook/useContextHook";
+import useContextHook from "../../CustomHook/useContextHook";
 import swal from "sweetalert";
 
 const CheckOut = () => {
