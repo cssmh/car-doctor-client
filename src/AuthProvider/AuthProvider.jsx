@@ -59,13 +59,13 @@ const AuthProvider = ({ children }) => {
       setLoading(false);
       if (loggedEmail) {
         axios
-          .post("http://localhost:5000/jwt", getEmail, {
+          .post("https://car-doctor-server-ecru-chi.vercel.app/jwt", getEmail, {
             withCredentials: true,
           })
           .then((res) => console.log("login token response", res.data));
       } else {
         axios
-          .post("http://localhost:5000/logout", getEmail, {
+          .post("https://car-doctor-server-ecru-chi.vercel.app/logout", getEmail, {
             withCredentials: true,
           })
           .then((res) => console.log("logout token response", res.data));

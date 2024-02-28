@@ -56,7 +56,7 @@ const Root = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/services/${params.id}`, {
+          fetch(`https://car-doctor-server-ecru-chi.vercel.app/services/${params.id}`, {
             credentials: "include",
           }),
       },
